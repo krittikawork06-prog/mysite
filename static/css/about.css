@@ -1,0 +1,897 @@
+/* =========================================================
+   SARAB - ABOUT PAGE
+   Designed to match the supplied homepage:
+   Playfair Display + Poppins, red/yellow/green accents,
+   rounded cards, clean restaurant-style sections.
+   ========================================================= */
+
+:root {
+    --primary: #e8281a;
+    --primary-dark: #c91f14;
+    --secondary: #f5b900;
+    --green: #1c9b58;
+    --dark: #151515;
+    --dark-2: #202020;
+    --text: #252525;
+    --muted: #777;
+    --light: #f8f7f4;
+    --white: #fff;
+    --border: #ece9e3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* TOP BAR */
+#topbar {
+    background: var(--dark);
+    color: rgba(255,255,255,.72);
+    font-size: .76rem;
+    padding: 9px 0;
+}
+
+.topbar-inner,
+.top-contact,
+.top-right,
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-inner {
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.top-contact {
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.top-contact span {
+    white-space: nowrap;
+}
+
+.top-contact i {
+    color: var(--primary);
+    margin-right: 6px;
+}
+
+.top-right {
+    gap: 18px;
+}
+
+.delivery-tag {
+    color: #fff;
+    font-weight: 600;
+}
+
+.delivery-tag i {
+    color: var(--secondary);
+    margin-right: 5px;
+}
+
+.socials {
+    gap: 7px;
+}
+
+.socials a {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(255,255,255,.08);
+    font-size: .72rem;
+    transition: .25s;
+}
+
+.socials a:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* NAVBAR */
+#nav {
+    min-height: 82px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 20;
+}
+
+.brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    transform: rotate(-4deg);
+}
+
+.brand-name {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-size: 1.65rem;
+    line-height: 1;
+    color: var(--dark);
+}
+
+.brand-name span {
+    color: var(--primary);
+}
+
+.brand-sub {
+    margin-top: 3px;
+    color: #999;
+    font-size: .61rem;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+.navbar-nav {
+    gap: 3px;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-size: .82rem;
+    font-weight: 500;
+    padding: 10px 12px !important;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: .25s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.navbar-toggler i {
+    color: var(--primary);
+    font-size: 1.35rem;
+}
+
+.order-btn,
+.red-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    background: var(--primary);
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: .8rem;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.order-btn:hover,
+.red-btn:hover {
+    color: #fff;
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(232,40,26,.18);
+}
+
+/* HERO */
+.about-hero {
+    position: relative;
+    min-height: 410px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(232,40,26,.09), transparent 28%),
+        radial-gradient(circle at 90% 75%, rgba(245,185,0,.12), transparent 25%),
+        #f8f7f4;
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .35;
+    background-image:
+        radial-gradient(#ddd 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+.hero-content {
+    position: relative;
+    padding: 75px 0;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--primary);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+}
+
+.about-hero h1 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.08;
+    font-weight: 900;
+    color: var(--dark);
+}
+
+.about-hero h1 span,
+.section-title span,
+.about-cta h2 span {
+    color: var(--primary);
+}
+
+.section-line {
+    width: 62px;
+    height: 3px;
+    background: var(--primary);
+    margin: 15px auto 17px;
+    border-radius: 10px;
+}
+
+.about-hero p {
+    max-width: 620px;
+    margin: auto;
+    color: var(--muted);
+    font-size: .95rem;
+    line-height: 1.8;
+}
+
+.breadcrumb-custom {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: .76rem;
+}
+
+.breadcrumb-custom a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.breadcrumb-custom i {
+    color: #aaa;
+    font-size: .6rem;
+}
+
+.breadcrumb-custom span {
+    color: #888;
+}
+
+/* COMMON */
+.story-section,
+.values-section,
+.mission-section,
+.journey-section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    color: var(--dark);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 0;
+}
+
+.section-line.left {
+    margin-left: 0;
+}
+
+.section-text {
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+/* IMAGE STACK */
+.image-stack {
+    position: relative;
+    min-height: 500px;
+    max-width: 510px;
+    margin: auto;
+}
+
+.main-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 77%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 22px 50px rgba(0,0,0,.14);
+    z-index: 2;
+}
+
+.main-image img,
+.small-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.small-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    height: 225px;
+    overflow: hidden;
+    border: 9px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+    z-index: 4;
+}
+
+.experience-badge {
+    position: absolute;
+    left: -5px;
+    bottom: 65px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 14px 30px rgba(232,40,26,.3);
+    text-align: center;
+}
+
+.experience-badge strong {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.experience-badge span {
+    margin-top: 7px;
+    font-size: .62rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.circle-decoration {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    border: 3px solid var(--secondary);
+    border-radius: 50%;
+    top: -5px;
+    right: 20px;
+    z-index: 1;
+}
+
+/* VALUES */
+.values-section {
+    background: var(--light);
+}
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 48px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: .87rem;
+    line-height: 1.8;
+}
+
+.value-card {
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.value-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0,0,0,.09);
+}
+
+.value-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 22px;
+}
+
+.value-icon.red {
+    color: var(--primary);
+    background: rgba(232,40,26,.10);
+}
+
+.value-icon.yellow {
+    color: #b98500;
+    background: rgba(245,185,0,.16);
+}
+
+.value-icon.green {
+    color: var(--green);
+    background: rgba(28,155,88,.11);
+}
+
+.value-card h4 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: var(--muted);
+    font-size: .83rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.card-number {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(0,0,0,.035);
+}
+
+/* MISSION */
+.mission-section {
+    background: #fff;
+}
+
+.mission-card {
+    height: 100%;
+    display: flex;
+    gap: 22px;
+    padding: 38px;
+    border-radius: 20px;
+    background: #f8f7f4;
+    border: 1px solid var(--border);
+}
+
+.mission-card.dark {
+    background: var(--dark);
+    border-color: var(--dark);
+}
+
+.mission-icon {
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232,40,26,.12);
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.mission-card.dark .mission-icon {
+    background: rgba(255,255,255,.08);
+}
+
+.mini-label {
+    color: var(--primary);
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.mission-card h3 {
+    margin: 7px 0 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+.mission-card.dark h3 {
+    color: #fff;
+}
+
+.mission-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .83rem;
+    line-height: 1.8;
+}
+
+.mission-card.dark p {
+    color: rgba(255,255,255,.62);
+}
+
+/* JOURNEY */
+.journey-section {
+    background: var(--light);
+}
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #dedbd5;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 70px 1fr;
+    align-items: center;
+    min-height: 155px;
+}
+
+.timeline-year {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-align: right;
+    padding-right: 35px;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 35px;
+}
+
+.timeline-dot {
+    grid-column: 2;
+    grid-row: 1;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 4px solid var(--light);
+    background: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary);
+    justify-self: center;
+    z-index: 2;
+}
+
+.timeline-content {
+    padding-left: 35px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding-left: 0;
+    padding-right: 35px;
+    text-align: right;
+}
+
+.timeline-content h4 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    color: var(--muted);
+    font-size: .82rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* CTA */
+.about-cta {
+    padding: 75px 0;
+    background: #fff;
+}
+
+.cta-box {
+    background:
+        radial-gradient(circle at 90% 20%, rgba(245,185,0,.16), transparent 25%),
+        var(--dark);
+    border-radius: 24px;
+    padding: 50px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cta-box .section-label {
+    color: var(--secondary);
+}
+
+.about-cta h2 {
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    margin: 0 0 8px;
+}
+
+.about-cta p {
+    color: rgba(255,255,255,.6);
+    margin: 0;
+    font-size: .85rem;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: rgba(255,255,255,.55);
+    padding: 45px 0 20px;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand {
+    color: #fff;
+}
+
+.footer-inner p {
+    margin: 5px 0 0;
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,.6);
+    font-size: .78rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 18px;
+    font-size: .7rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .topbar-inner,
+    .top-right {
+        justify-content: center;
+    }
+
+    .topbar-inner {
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        padding: 15px 0;
+    }
+
+    .order-btn {
+        margin-bottom: 15px;
+    }
+
+    .story-section,
+    .values-section,
+    .mission-section,
+    .journey-section {
+        padding: 75px 0;
+    }
+
+    .image-stack {
+        margin-bottom: 30px;
+    }
+
+    .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    #topbar {
+        display: none;
+    }
+
+    #nav {
+        min-height: 70px;
+    }
+
+    .about-hero {
+        min-height: 350px;
+    }
+
+    .hero-content {
+        padding: 55px 0;
+    }
+
+    .image-stack {
+        min-height: 390px;
+    }
+
+    .main-image {
+        height: 320px;
+    }
+
+    .small-image {
+        height: 170px;
+    }
+
+    .experience-badge {
+        width: 105px;
+        height: 105px;
+        bottom: 45px;
+    }
+
+    .experience-badge strong {
+        font-size: 1.6rem;
+    }
+
+    .experience-badge span {
+        font-size: .54rem;
+    }
+
+    .timeline::before {
+        left: 10px;
+        transform: none;
+    }
+
+    .timeline-item {
+        display: block;
+        position: relative;
+        min-height: 0;
+        padding-left: 40px;
+        margin-bottom: 38px;
+    }
+
+    .timeline-year,
+    .timeline-item:nth-child(even) .timeline-year {
+        text-align: left;
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 2px;
+        top: 8px;
+        width: 17px;
+        height: 17px;
+    }
+
+    .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        padding: 0;
+        text-align: left;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 575px) {
+    .story-section,
+    .values-section,
+    .mission-section,
+    .journey-section {
+        padding: 60px 0;
+    }
+
+    .image-stack {
+        min-height: 340px;
+    }
+
+    .main-image {
+        width: 80%;
+        height: 275px;
+        left: 10px;
+    }
+
+    .small-image {
+        width: 48%;
+        height: 145px;
+    }
+
+    .circle-decoration {
+        width: 80px;
+        height: 80px;
+    }
+
+    .mission-card {
+        padding: 25px;
+        gap: 15px;
+    }
+
+    .cta-box {
+        padding: 30px 25px;
+    }
+}
